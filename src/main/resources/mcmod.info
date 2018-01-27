@@ -1,0 +1,16 @@
+[
+{
+  "modid": "necplusultra",
+  "name": "Nec Plus Ultra",
+  "description": "To infinity and beyond. Through random features!",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Daemond", "Zekromaster"],
+  "credits": "The Forge and FML guys, for making Forge.\nThe GNU Foundation, for the GPLv3 and the OS on which this mod was developed.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
