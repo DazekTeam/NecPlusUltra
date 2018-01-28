@@ -2,7 +2,6 @@ package dazek.necplusultra;
 
 import static dazek.necplusultra.item.NecItem.DIAMOND_COMPRESSED_PICKAXE;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 /*

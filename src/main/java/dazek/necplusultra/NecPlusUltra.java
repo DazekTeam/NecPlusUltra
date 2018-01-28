@@ -17,7 +17,6 @@
 
 package dazek.necplusultra;
 
-import dazek.necplusultra.proxy.ClientProxy;
 import dazek.necplusultra.proxy.CommonProxy;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.Mod;
@@ -35,8 +34,9 @@ public class NecPlusUltra
     public static final String MODID = "necplusultra";
     public static final String NAME = "Nec Plus Ultra";
     public static final String VERSION = "0.0.1alpha0";
+    
 
-    private static Logger logger;
+    public static Logger logger;
     
     public static CreativeTabs necTab = new CreativeTab();
     

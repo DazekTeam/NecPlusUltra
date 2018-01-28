@@ -16,6 +16,7 @@
  */
 package dazek.necplusultra.item;
 
+import dazek.necplusultra.NecPlusConfig;
 import dazek.necplusultra.NecPlusUltra;
 import net.minecraft.item.ItemPickaxe;
 
@@ -29,7 +30,7 @@ public class CompressedPickaxe extends ItemPickaxe implements IDazekItem {
     public CompressedPickaxe(ToolMaterial t, String unlocalizedName){
         super(t);
         this.setUnlocalizedName(NecPlusUltra.MODID + "." + unlocalizedName);
-        this.setMaxDamage(t.getMaxUses() * 10);
+        this.setMaxDamage(t.getMaxUses() * NecPlusConfig.pickStrength);
         this.setCreativeTab(NecPlusUltra.necTab);
         this.setRegistryName(unlocalizedName);
     }
