@@ -26,32 +26,32 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import cofh.redstoneflux.impl.ItemEnergyContainer;
 
 /**
  *
  * @author Daem
  */
-public class TestDurability extends Item implements IDazekItem{
+public class TestDurability extends ItemEnergyContainer implements IDazekItem{
 
     public TestDurability(String unlocalizedName){
-        super();
+        super(100 /* TEST */);
         
         this.setUnlocalizedName(NecPlusUltra.MODID + "." + unlocalizedName);
-        this.setMaxDamage(100); // TEST
         this.setCreativeTab(NecPlusUltra.necTab);
         this.setRegistryName(unlocalizedName);
     }
     
     @Override
     public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
-    {        
-        NecPlusUltra.logger.info("Removing durability...");
-        
-        NecPlusUltra.logger.info(player instanceof EntityPlayer);
-        
+    {
+        ItemStack stack = player.getHeldItem(hand);
         if (!worldIn.isRemote){
-            player.getHeldItem(hand).damageItem(1, player);
+            //player.getHeldItem(hand).damageItem(1, player);
+            extractEnergy(stack, 2, false);
         }
+        
+        NecPlusUltra.logger.info(getEnergyStored(stack));
         
         return EnumActionResult.SUCCESS;
     }
