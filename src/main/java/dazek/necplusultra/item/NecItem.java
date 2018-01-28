@@ -38,6 +38,9 @@ public class NecItem {
     
     @GameRegistry.ObjectHolder("necplusultra:compressed_pickaxe_diamond")
     public static CompressedPickaxe DIAMOND_COMPRESSED_PICKAXE;
+    
+    @GameRegistry.ObjectHolder("necplusultra:test_durability")
+    public static TestDurability TEST_DURABILITY;
 
     // Relisting them here for ease of iterating
     public ArrayList<IDazekItem> getItemList(){
@@ -49,6 +52,7 @@ public class NecItem {
         items.add(IRON_COMPRESSED_PICKAXE);
         items.add(GOLD_COMPRESSED_PICKAXE);
         items.add(DIAMOND_COMPRESSED_PICKAXE);
+        items.add(TEST_DURABILITY);
         
         //Returning
         return items;

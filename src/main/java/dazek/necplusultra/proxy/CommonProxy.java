@@ -18,6 +18,7 @@ package dazek.necplusultra.proxy;
 
 import dazek.necplusultra.NecPlusConfig;
 import dazek.necplusultra.item.CompressedPickaxe;
+import dazek.necplusultra.item.TestDurability;
 import java.io.File;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -69,5 +70,7 @@ public class CommonProxy {
         event.getRegistry().register(new CompressedPickaxe(IRON, "compressed_pickaxe_iron"));
         event.getRegistry().register(new CompressedPickaxe(GOLD, "compressed_pickaxe_gold"));
         event.getRegistry().register(new CompressedPickaxe(DIAMOND, "compressed_pickaxe_diamond"));
+        event.getRegistry().register(new TestDurability("test_durability"));
+        
     }
 }
