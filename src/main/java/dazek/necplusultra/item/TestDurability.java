@@ -49,9 +49,9 @@ public class TestDurability extends ItemEnergyContainer implements IDazekItem{
         if (!worldIn.isRemote){
             //player.getHeldItem(hand).damageItem(1, player);
             extractEnergy(stack, 2, false);
+            NecPlusUltra.logger.info("Energia rimasta: " + getEnergyStored(stack));
         }
         
-        NecPlusUltra.logger.info(getEnergyStored(stack));
         
         return EnumActionResult.SUCCESS;
     }
