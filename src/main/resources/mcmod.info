@@ -11,6 +11,6 @@
   "credits": "The Forge and FML guys, for making Forge.\nThe GNU Foundation, for the GPLv3 and the OS on which this mod was developed.",
   "logoFile": "",
   "screenshots": [],
-  "dependencies": []
+  "dependencies": ["forge", "redstoneflux"]
 }
 ]

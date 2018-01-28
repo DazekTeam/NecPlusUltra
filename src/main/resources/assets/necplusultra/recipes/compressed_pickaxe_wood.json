@@ -1,0 +1,17 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "###",
+        "###",
+        "###"
+    ],
+   "key": {
+     "#": {
+            "item": "minecraft:wooden_pickaxe"
+     }   
+   },
+    "result": {
+        "item": "necplusultra:compressed_pickaxe_wood",
+        "count": 1
+    }
+}
