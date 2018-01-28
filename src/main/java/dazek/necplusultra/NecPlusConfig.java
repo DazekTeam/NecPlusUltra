@@ -27,9 +27,12 @@ import org.apache.logging.log4j.Level;
 public class NecPlusConfig {
     private static final String CATEGORY_GENERAL = "general";
     private static final String CATEGORY_PICKAXES = "pickaxes";
+    private static final String CATEGORY_CONCENTRATED_FLUX = "concentrated_flux";
     
     // Properties
     public static int pickStrength = 10; 
+    
+    public static int concentratedFluxMaxRF = 1000;
     
     public static void readConfig() {
         Configuration cfg = CommonProxy.config;
@@ -37,6 +40,7 @@ public class NecPlusConfig {
             cfg.load();
             initGeneralConfig(cfg);
             initPickaxeConfig(cfg);
+            initConcentratedFluxConfig(cfg);
         } catch (Exception e1) {
             NecPlusUltra.logger.log(Level.ERROR, "Problem loading config file!", e1);
         } finally {
@@ -53,5 +57,10 @@ public class NecPlusConfig {
     private static void initPickaxeConfig(Configuration cfg) {
         cfg.addCustomCategoryComment(CATEGORY_PICKAXES, "Pickaxes configuration -- For futureproofing");
         pickStrength = cfg.getInt("pickStrength", CATEGORY_PICKAXES, pickStrength, 2, 99, "A compressed pickaxe's durability is basepick * pickStrength");
+    }
+    
+    private static void initConcentratedFluxConfig(Configuration cfg){
+        cfg.addCustomCategoryComment(CATEGORY_CONCENTRATED_FLUX, "Concentrated Flux configuration");
+        concentratedFluxMaxRF = cfg.getInt("concentratedFluxMaxRF", CATEGORY_CONCENTRATED_FLUX, concentratedFluxMaxRF, 1, 10000000, "The rf contained in each Concentrated Flux Dust when mined");        
     }
 }

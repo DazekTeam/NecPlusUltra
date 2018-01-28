@@ -27,15 +27,21 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import cofh.redstoneflux.impl.ItemEnergyContainer;
+import dazek.necplusultra.NecPlusConfig;
+import java.util.List;
+import javax.annotation.Nullable;
+import net.minecraft.client.util.ITooltipFlag;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
  *
  * @author Daem
  */
-public class TestDurability extends ItemEnergyContainer implements IDazekItem{
+public class ConcentratedFluxDust extends ItemEnergyContainer implements IDazekItem{
 
-    public TestDurability(String unlocalizedName){
-        super(100 /* TEST */);
+    public ConcentratedFluxDust(String unlocalizedName){
+        super(NecPlusConfig.concentratedFluxMaxRF);
         
         this.setUnlocalizedName(NecPlusUltra.MODID + "." + unlocalizedName);
         this.setCreativeTab(NecPlusUltra.necTab);
@@ -43,17 +49,15 @@ public class TestDurability extends ItemEnergyContainer implements IDazekItem{
     }
     
     @Override
-    public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
+    public int receiveEnergy(ItemStack container, int maxReceive, boolean simulate) {
+        return 0;
+    }
+    
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
     {
-        ItemStack stack = player.getHeldItem(hand);
-        if (!worldIn.isRemote){
-            //player.getHeldItem(hand).damageItem(1, player);
-            extractEnergy(stack, 2, false);
-            NecPlusUltra.logger.info("Energia rimasta: " + getEnergyStored(stack));
-        }
-        
-        
-        return EnumActionResult.SUCCESS;
+        tooltip.add("RF " + getEnergyStored(stack) + "/" + getMaxEnergyStored(stack));
     }
     
     @Override

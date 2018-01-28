@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-    "layer0": "necplusultra:items/test_durability"
+    "layer0": "necplusultra:items/concentrated_flux_dust"
     }
 }
