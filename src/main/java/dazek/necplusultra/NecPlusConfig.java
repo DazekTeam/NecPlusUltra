@@ -32,7 +32,7 @@ public class NecPlusConfig {
     // Properties
     public static int pickStrength = 10; 
     
-    public static int concentratedFluxMaxRF = 1000;
+    public static int rfBatteryMaxRF = 10000;
     
     public static void readConfig() {
         Configuration cfg = CommonProxy.config;
@@ -40,7 +40,7 @@ public class NecPlusConfig {
             cfg.load();
             initGeneralConfig(cfg);
             initPickaxeConfig(cfg);
-            initConcentratedFluxConfig(cfg);
+            initRFItems(cfg);
         } catch (Exception e1) {
             NecPlusUltra.logger.log(Level.ERROR, "Problem loading config file!", e1);
         } finally {
@@ -59,8 +59,8 @@ public class NecPlusConfig {
         pickStrength = cfg.getInt("pickStrength", CATEGORY_PICKAXES, pickStrength, 2, 99, "A compressed pickaxe's durability is basepick * pickStrength");
     }
     
-    private static void initConcentratedFluxConfig(Configuration cfg){
-        cfg.addCustomCategoryComment(CATEGORY_CONCENTRATED_FLUX, "Concentrated Flux configuration");
-        concentratedFluxMaxRF = cfg.getInt("concentratedFluxMaxRF", CATEGORY_CONCENTRATED_FLUX, concentratedFluxMaxRF, 1, 10000000, "The rf contained in each Concentrated Flux Dust when mined");        
+    private static void initRFItems(Configuration cfg){
+        cfg.addCustomCategoryComment(CATEGORY_CONCENTRATED_FLUX, "RF Items Configuration");
+        rfBatteryMaxRF = cfg.getInt("rfBatteryMaxRF", CATEGORY_CONCENTRATED_FLUX, rfBatteryMaxRF, 1, Integer.MAX_VALUE, "The maximum amount of rf that can be stored in a rf battery");        
     }
 }

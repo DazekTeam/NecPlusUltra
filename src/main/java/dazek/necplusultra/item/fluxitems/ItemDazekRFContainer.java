@@ -14,54 +14,54 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package dazek.necplusultra.item;
+package dazek.necplusultra.item.fluxitems;
 
-import dazek.necplusultra.NecPlusUltra;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.EnumActionResult;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 import cofh.redstoneflux.impl.ItemEnergyContainer;
-import dazek.necplusultra.NecPlusConfig;
+import dazek.necplusultra.NecPlusUltra;
+import dazek.necplusultra.item.IDazekItem;
 import java.util.List;
 import javax.annotation.Nullable;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
  *
  * @author Daem
+ * 
+ * Used to create items that use rf as durability
  */
-public class ConcentratedFluxDust extends ItemEnergyContainer implements IDazekItem{
-
-    public ConcentratedFluxDust(String unlocalizedName){
-        super(NecPlusConfig.concentratedFluxMaxRF);
+public abstract class ItemDazekRFContainer extends ItemEnergyContainer implements IDazekItem{
+    public ItemDazekRFContainer(int capacity, String unlocalizedName){
+        super(capacity);
         
         this.setUnlocalizedName(NecPlusUltra.MODID + "." + unlocalizedName);
         this.setCreativeTab(NecPlusUltra.necTab);
         this.setRegistryName(unlocalizedName);
-    }
-    
-    @Override
-    public int receiveEnergy(ItemStack container, int maxReceive, boolean simulate) {
-        return 0;
+        this.setMaxStackSize(1);
     }
     
     @Override
     @SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
-    {
-        tooltip.add("RF " + getEnergyStored(stack) + "/" + getMaxEnergyStored(stack));
+    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn){
+        tooltip.add(getEnergyStored(stack) + "/" + getMaxEnergyStored(stack) + " RF");
     }
     
     @Override
-    public void registerRecipeOfThis() {
-        // THIS SHOULDN'T HAVE RECIPES
+    public double getDurabilityForDisplay(ItemStack stack){
+        // I dunno why this needs a 1 -, but it works
+        return 1 - (double)getEnergyStored(stack) / (double)getMaxEnergyStored(stack);
+    }
+    
+    @Override
+    public int getRGBDurabilityForDisplay(ItemStack stack){
+        return 16711680; // FF0000
+    }
+    
+    @Override
+    public boolean showDurabilityBar(ItemStack stack){
+        return true;
     }
 }

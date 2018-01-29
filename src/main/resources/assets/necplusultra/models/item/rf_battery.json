@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-    "layer0": "necplusultra:items/concentrated_flux_dust"
+    "layer0": "necplusultra:items/rf_battery"
     }
 }

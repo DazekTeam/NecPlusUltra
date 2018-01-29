@@ -66,6 +66,6 @@ public class ClientProxy extends CommonProxy {
         registerModel(NecItem.IRON_COMPRESSED_PICKAXE);
         registerModel(NecItem.GOLD_COMPRESSED_PICKAXE);
         registerModel(NecItem.DIAMOND_COMPRESSED_PICKAXE);
-        registerModel(NecItem.CONCENTRATED_FLUX_DUST);
+        registerModel(NecItem.RF_BATTERY);
     }
 }
