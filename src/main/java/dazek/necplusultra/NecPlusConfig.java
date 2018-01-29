@@ -27,12 +27,13 @@ import org.apache.logging.log4j.Level;
 public class NecPlusConfig {
     private static final String CATEGORY_GENERAL = "general";
     private static final String CATEGORY_PICKAXES = "pickaxes";
-    private static final String CATEGORY_CONCENTRATED_FLUX = "concentrated_flux";
+    private static final String CATEGORY_RF_ITEMS = "rf_items";
     
     // Properties
     public static int pickStrength = 10; 
     
     public static int rfBatteryMaxRF = 10000;
+    public static int energyDrinkMaxRF = 1000;
     
     public static void readConfig() {
         Configuration cfg = CommonProxy.config;
@@ -60,7 +61,9 @@ public class NecPlusConfig {
     }
     
     private static void initRFItems(Configuration cfg){
-        cfg.addCustomCategoryComment(CATEGORY_CONCENTRATED_FLUX, "RF Items Configuration");
-        rfBatteryMaxRF = cfg.getInt("rfBatteryMaxRF", CATEGORY_CONCENTRATED_FLUX, rfBatteryMaxRF, 1, Integer.MAX_VALUE, "The maximum amount of rf that can be stored in a rf battery");        
+        cfg.addCustomCategoryComment(CATEGORY_RF_ITEMS, "RF Items Configuration");
+        rfBatteryMaxRF = cfg.getInt("rfBatteryMaxRF", CATEGORY_RF_ITEMS, rfBatteryMaxRF, 1, Integer.MAX_VALUE, "The maximum amount of rf that can be stored in a rf battery");        
+        energyDrinkMaxRF = cfg.getInt("energyDrinkMaxRF", CATEGORY_RF_ITEMS, energyDrinkMaxRF, 1, Integer.MAX_VALUE, "The maximum amount of rf that can be stored in an energy drink");        
+
     }
 }

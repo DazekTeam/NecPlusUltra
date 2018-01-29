@@ -16,6 +16,7 @@
  */
 package dazek.necplusultra.item;
 
+import dazek.necplusultra.item.fluxitems.ItemEnergyDrink;
 import dazek.necplusultra.item.fluxitems.ItemRFBattery;
 import java.util.ArrayList;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -42,6 +43,9 @@ public class NecItem {
     
     @GameRegistry.ObjectHolder("necplusultra:rf_battery")
     public static ItemRFBattery RF_BATTERY;
+    
+    @GameRegistry.ObjectHolder("necplusultra:energy_drink")
+    public static ItemEnergyDrink ENERGY_DRINK;
 
     // Relisting them here for ease of iterating
     public ArrayList<IDazekItem> getItemList(){
@@ -54,6 +58,7 @@ public class NecItem {
         items.add(GOLD_COMPRESSED_PICKAXE);
         items.add(DIAMOND_COMPRESSED_PICKAXE);
         items.add(RF_BATTERY);
+        items.add(ENERGY_DRINK);
         
         //Returning
         return items;

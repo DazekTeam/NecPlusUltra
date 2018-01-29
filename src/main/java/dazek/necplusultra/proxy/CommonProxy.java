@@ -18,6 +18,7 @@ package dazek.necplusultra.proxy;
 
 import dazek.necplusultra.NecPlusConfig;
 import dazek.necplusultra.item.CompressedPickaxe;
+import dazek.necplusultra.item.fluxitems.ItemEnergyDrink;
 import dazek.necplusultra.item.fluxitems.ItemRFBattery;
 import java.io.File;
 import net.minecraft.block.Block;
@@ -71,6 +72,7 @@ public class CommonProxy {
         event.getRegistry().register(new CompressedPickaxe(GOLD, "compressed_pickaxe_gold"));
         event.getRegistry().register(new CompressedPickaxe(DIAMOND, "compressed_pickaxe_diamond"));
         event.getRegistry().register(new ItemRFBattery("rf_battery"));
+        event.getRegistry().register(new ItemEnergyDrink("energy_drink"));
         
     }
 }
