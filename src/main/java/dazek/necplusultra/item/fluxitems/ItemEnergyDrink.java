@@ -17,6 +17,7 @@
 package dazek.necplusultra.item.fluxitems;
 
 import dazek.necplusultra.NecPlusConfig;
+import dazek.necplusultra.NecPlusUltra;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -46,7 +47,7 @@ public class ItemEnergyDrink extends ItemDazekRFContainer{
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn){
         ItemStack stack = playerIn.getHeldItem(handIn);
         
-        if (playerIn.canEat(false)){
+        if (playerIn.canEat(false) && getFoodAmount(stack) > 0){
             playerIn.setActiveHand(handIn);
             return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, stack);
         }else{            
