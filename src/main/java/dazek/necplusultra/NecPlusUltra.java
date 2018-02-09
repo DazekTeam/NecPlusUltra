@@ -33,7 +33,7 @@ public class NecPlusUltra
 {
     public static final String MODID = "necplusultra";
     public static final String NAME = "Nec Plus Ultra";
-    public static final String VERSION = "0.0.1alpha0";
+    public static final String VERSION = "v1#18";
     
 
     public static Logger logger;

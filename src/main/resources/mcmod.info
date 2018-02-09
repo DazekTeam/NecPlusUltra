@@ -8,9 +8,11 @@
   "url": "",
   "updateUrl": "",
   "authorList": ["Daemond", "Zekromaster"],
-  "credits": "The Forge and FML guys, for making Forge.\nThe GNU Foundation, for the GPLv3 and the OS on which this mod was developed.",
+  "credits": "The Forge and FML guys, for making Forge.\nThe GNU Foundation, for the GPLv3\n The GNU Foundation and the Linux Foundation, for the OS on which this mod was developed.",
   "logoFile": "",
   "screenshots": [],
-  "dependencies": ["forge", "redstoneflux"]
+  "requiredMods": ["forge", "redstoneflux"],
+  "dependencies": ["forge", "redstoneflux"],
+  "useDependencyInformation": "true"
 }
 ]
