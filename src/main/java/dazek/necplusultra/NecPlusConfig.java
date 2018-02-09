@@ -34,6 +34,7 @@ public class NecPlusConfig {
     
     public static int rfBatteryMaxRF = 10000;
     public static int energyDrinkMaxRF = 1000;
+    public static int energyDrinkMaxHunger = 12;
     
     public static void readConfig() {
         Configuration cfg = CommonProxy.config;
@@ -64,6 +65,6 @@ public class NecPlusConfig {
         cfg.addCustomCategoryComment(CATEGORY_RF_ITEMS, "RF Items Configuration");
         rfBatteryMaxRF = cfg.getInt("rfBatteryMaxRF", CATEGORY_RF_ITEMS, rfBatteryMaxRF, 1, Integer.MAX_VALUE, "The maximum amount of rf that can be stored in a rf battery");        
         energyDrinkMaxRF = cfg.getInt("energyDrinkMaxRF", CATEGORY_RF_ITEMS, energyDrinkMaxRF, 1, Integer.MAX_VALUE, "The maximum amount of rf that can be stored in an energy drink");        
-
+        energyDrinkMaxHunger = cfg.getInt("energyDrinkMaxRF", CATEGORY_RF_ITEMS, energyDrinkMaxHunger, 2, 20, "The maximum amount of hunger tha can be restored by an energy drink. Actual hunger restored is this multiplied by the ratio of RF stored to max RF.");        
     }
 }

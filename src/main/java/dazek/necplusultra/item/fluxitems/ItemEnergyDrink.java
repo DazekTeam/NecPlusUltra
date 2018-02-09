@@ -78,7 +78,7 @@ public class ItemEnergyDrink extends ItemDazekRFContainer{
     }
     
     public int getFoodAmount(ItemStack stack){
-        return (int)((double)12 * getEnergyRatio(stack));
+        return (int)((double)NecPlusConfig.energyDrinkMaxHunger * getEnergyRatio(stack));
     }
     
     public float getSaturationModifier(ItemStack stack){
