@@ -4,4 +4,5 @@ item.necplusultra.compressed_pickaxe_stone.name=Piccone compresso di pietra
 item.necplusultra.compressed_pickaxe_iron.name=Piccone compresso di ferro
 item.necplusultra.compressed_pickaxe_gold.name=Piccone compresso d'oro
 item.necplusultra.compressed_pickaxe_diamond.name=Piccone compresso di diamante
-item.necplusultra.rf_battery.name=Batteria a RF
+item.necplusultra.rf_battery.name=Batteria a FP
+item.necplusultra.energy_drink.name=Energy Drink
