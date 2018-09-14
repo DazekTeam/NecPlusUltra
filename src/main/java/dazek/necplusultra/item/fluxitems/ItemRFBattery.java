@@ -28,10 +28,5 @@ public class ItemRFBattery extends ItemDazekRFContainer{
         super(NecPlusConfig.rfBatteryMaxRF, unlocalizedName);
         
     }
-
-    @Override
-    public void registerRecipeOfThis() {
-        // THIS HAS A JSON RECIPE
-    }
     
 }

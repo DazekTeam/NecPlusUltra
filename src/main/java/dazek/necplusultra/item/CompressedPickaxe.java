@@ -25,7 +25,7 @@ import net.minecraft.item.ItemPickaxe;
  *
  * @author zekromaster
  */
-public class CompressedPickaxe extends ItemPickaxe implements IDazekItem {
+public class CompressedPickaxe extends ItemPickaxe {
     
     public CompressedPickaxe(ToolMaterial t, String unlocalizedName){
         super(t);
@@ -33,10 +33,5 @@ public class CompressedPickaxe extends ItemPickaxe implements IDazekItem {
         this.setMaxDamage(t.getMaxUses() * NecPlusConfig.pickStrength);
         this.setCreativeTab(NecPlusUltra.necTab);
         this.setRegistryName(unlocalizedName);
-    }
-    
-    @Override
-    public void registerRecipeOfThis(){
-        // RECIPES FOR THIS ONE ARE REGISTERED THROUGH JSON.
     }
 }

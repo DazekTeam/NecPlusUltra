@@ -95,9 +95,4 @@ public class ItemEnergyDrink extends ItemDazekRFContainer{
         return EnumAction.EAT;
     }
     
-    @Override
-    public void registerRecipeOfThis() {
-        // THIS HAS A JSON RECIPE
-    }
-    
 }

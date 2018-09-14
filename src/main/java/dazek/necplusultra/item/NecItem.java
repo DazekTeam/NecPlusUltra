@@ -19,7 +19,11 @@ package dazek.necplusultra.item;
 import dazek.necplusultra.item.fluxitems.ItemEnergyDrink;
 import dazek.necplusultra.item.fluxitems.ItemRFBattery;
 import java.util.ArrayList;
+
+import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+
+import static net.minecraft.item.Item.ToolMaterial.*;
 
 /**
  *
@@ -47,26 +51,40 @@ public class NecItem {
     @GameRegistry.ObjectHolder("necplusultra:energy_drink")
     public static ItemEnergyDrink ENERGY_DRINK;
 
+    private static ArrayList<Item> itemList;
+
+    // Add new items here
+    public static void createItems(){
+        if (itemList != null)
+            return;
+
+        itemList = new ArrayList<>();
+
+        // Compressed Pickaxes
+        itemList.add(new CompressedPickaxe(WOOD, "compressed_pickaxe_wood"));
+        itemList.add(new CompressedPickaxe(STONE, "compressed_pickaxe_stone"));
+        itemList.add(new CompressedPickaxe(IRON, "compressed_pickaxe_iron"));
+        itemList.add(new CompressedPickaxe(GOLD, "compressed_pickaxe_gold"));
+        itemList.add(new CompressedPickaxe(DIAMOND, "compressed_pickaxe_diamond"));
+
+        // RF Items
+        itemList.add(new ItemRFBattery("rf_battery"));
+        itemList.add(new ItemEnergyDrink("energy_drink"));
+
+    }
+
     // Relisting them here for ease of iterating
-    public ArrayList<IDazekItem> getItemList(){
-        ArrayList<IDazekItem> items = new ArrayList<>();
-        
-        //Compressed Pickaxes
-        items.add(WOODEN_COMPRESSED_PICKAXE);
-        items.add(STONE_COMPRESSED_PICKAXE);
-        items.add(IRON_COMPRESSED_PICKAXE);
-        items.add(GOLD_COMPRESSED_PICKAXE);
-        items.add(DIAMOND_COMPRESSED_PICKAXE);
-        items.add(RF_BATTERY);
-        items.add(ENERGY_DRINK);
-        
+    public static ArrayList<Item> getItemList(){
+        if (itemList == null) {
+            createItems();
+        }
         //Returning
-        return items;
+        return itemList;
     }
     
     public void registerRecipes(){
-        getItemList().forEach((i) -> {
+        /*getItemList().forEach((i) -> {
             i.registerRecipeOfThis();
-        });
+        });*/
     }
 }

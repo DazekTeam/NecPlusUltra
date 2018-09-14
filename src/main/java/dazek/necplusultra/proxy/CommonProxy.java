@@ -17,13 +17,18 @@
 package dazek.necplusultra.proxy;
 
 import dazek.necplusultra.NecPlusConfig;
+import dazek.necplusultra.block.NecBlock;
+import dazek.necplusultra.block.TestBlock;
 import dazek.necplusultra.item.CompressedPickaxe;
+import dazek.necplusultra.item.NecItem;
 import dazek.necplusultra.item.fluxitems.ItemEnergyDrink;
 import dazek.necplusultra.item.fluxitems.ItemRFBattery;
 import java.io.File;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import static net.minecraft.item.Item.ToolMaterial.*;
+
+import net.minecraft.item.ItemBlock;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -60,19 +65,21 @@ public class CommonProxy {
     
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
+        for(Block b : NecBlock.getBlockList()){
+            event.getRegistry().register(b);
+        }
     }
     
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
-        
-        // Compressed Pickaxes
-        event.getRegistry().register(new CompressedPickaxe(WOOD, "compressed_pickaxe_wood"));
-        event.getRegistry().register(new CompressedPickaxe(STONE, "compressed_pickaxe_stone"));
-        event.getRegistry().register(new CompressedPickaxe(IRON, "compressed_pickaxe_iron"));
-        event.getRegistry().register(new CompressedPickaxe(GOLD, "compressed_pickaxe_gold"));
-        event.getRegistry().register(new CompressedPickaxe(DIAMOND, "compressed_pickaxe_diamond"));
-        event.getRegistry().register(new ItemRFBattery("rf_battery"));
-        event.getRegistry().register(new ItemEnergyDrink("energy_drink"));
-        
+        // Regular Items
+        for(Item i : NecItem.getItemList()){
+            event.getRegistry().register(i);
+        }
+
+        // Item Blocks
+        for(ItemBlock i : NecBlock.getItemBlockList()){
+            event.getRegistry().register(i);
+        }
     }
 }

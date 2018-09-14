@@ -16,7 +16,9 @@
  */
 package dazek.necplusultra.proxy;
 
+import dazek.necplusultra.block.NecBlock;
 import dazek.necplusultra.item.NecItem;
+import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -51,22 +53,31 @@ public class ClientProxy extends CommonProxy {
         super.postInit(e);
     }
     
-    private static void registerModel(Item i)
+    private static void registerItemModel(Item i)
     {
             ModelResourceLocation location = new ModelResourceLocation(i.getRegistryName(),"inventory");
             ModelLoader.setCustomModelResourceLocation(i, 0, location );
             System.out.println("Registered model for " + i.getRegistryName() + ". It is in " + location);
     }
-    
+
+    private static void registerBlockModel(Block b){
+        Item item = Item.getItemFromBlock(b);
+        ModelResourceLocation location = new ModelResourceLocation(item.getRegistryName(), "normal");
+        ModelLoader.setCustomModelResourceLocation(item, 0, location);
+
+        System.out.println("Registered model for " + item.getRegistryName() + ". It is in " + location);
+    }
+
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event) {
-        // Compressed Pickaxes
-        registerModel(NecItem.WOODEN_COMPRESSED_PICKAXE);
-        registerModel(NecItem.STONE_COMPRESSED_PICKAXE);
-        registerModel(NecItem.IRON_COMPRESSED_PICKAXE);
-        registerModel(NecItem.GOLD_COMPRESSED_PICKAXE);
-        registerModel(NecItem.DIAMOND_COMPRESSED_PICKAXE);
-        registerModel(NecItem.RF_BATTERY);
-        registerModel(NecItem.ENERGY_DRINK);
+        // Item Models
+        NecItem.getItemList().forEach(i -> {
+            registerItemModel((Item)i);
+        });
+
+        // Block Models
+        NecBlock.getBlockList().forEach(b -> {
+            registerBlockModel((Block)b);
+        });
     }
 }
