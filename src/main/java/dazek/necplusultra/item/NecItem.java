@@ -81,10 +81,4 @@ public class NecItem {
         //Returning
         return itemList;
     }
-    
-    public void registerRecipes(){
-        /*getItemList().forEach((i) -> {
-            i.registerRecipeOfThis();
-        });*/
-    }
 }

@@ -26,7 +26,6 @@ public class ItemRFBattery extends ItemDazekRFContainer{
 
     public ItemRFBattery(String unlocalizedName) {
         super(NecPlusConfig.rfBatteryMaxRF, unlocalizedName);
-        
     }
     
 }

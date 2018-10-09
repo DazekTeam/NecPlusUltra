@@ -57,7 +57,7 @@ public abstract class ItemDazekRFContainer extends ItemEnergyContainer{
     
     @Override
     public int getRGBDurabilityForDisplay(ItemStack stack){
-        return 16711680; // FF0000
+        return 0xFF0000;
     }
     
     @Override

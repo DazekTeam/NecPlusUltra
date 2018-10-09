@@ -58,7 +58,7 @@ public class NecPlusConfig {
     
     private static void initPickaxeConfig(Configuration cfg) {
         cfg.addCustomCategoryComment(CATEGORY_PICKAXES, "Pickaxes configuration -- For futureproofing");
-        pickStrength = cfg.getInt("pickStrength", CATEGORY_PICKAXES, pickStrength, 2, 99, "A compressed pickaxe's durability is basepick * pickStrength");
+        pickStrength = cfg.getInt("pickStrength", CATEGORY_PICKAXES, pickStrength, 2, 99, "A compressed pickaxe's durability is it's base pick's durability * pickStrength");
     }
     
     private static void initRFItems(Configuration cfg){
