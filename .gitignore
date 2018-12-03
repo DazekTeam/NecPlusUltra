@@ -26,3 +26,10 @@ build/
 run/
 .git/
 .nb-gradle-properties
+
+# Eclipse Files #
+# Generate with ./gradlew eclipse if needed #
+.project
+.classpath
+NecPlusUltra_*.launch
+.settings
