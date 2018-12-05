@@ -33,3 +33,4 @@ run/
 .classpath
 NecPlusUltra_*.launch
 .settings
+atom-build.yml

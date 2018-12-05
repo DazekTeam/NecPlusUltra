@@ -20,12 +20,12 @@ import dazek.necplusultra.NecPlusConfig;
 
 /**
  *
- * @author Daem
+ * @author Dazek Team
  */
-public class ItemRFBattery extends ItemDazekRFContainer{
+public class ItemRFBattery extends ItemDazekRFContainer {
 
-    public ItemRFBattery(String unlocalizedName) {
-        super(NecPlusConfig.rfBatteryMaxRF, unlocalizedName);
-    }
-    
+  public ItemRFBattery(String unlocalizedName) {
+  	super(NecPlusConfig.rfBatteryMaxRF, unlocalizedName);
+  }
+
 }

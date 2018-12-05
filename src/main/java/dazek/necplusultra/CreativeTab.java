@@ -23,15 +23,15 @@ import net.minecraft.item.ItemStack;
 
 /**
  *
- * @author zekromaster
+ * @author Dazek Team
  */
 public class CreativeTab extends CreativeTabs {
-    public CreativeTab(){
-        super("NecPlusUltra");
-    }
-    
-    @Override
-    public ItemStack getTabIconItem(){
-        return new ItemStack(DIAMOND_COMPRESSED_PICKAXE);
-    }
+  public CreativeTab(){
+  	super("NecPlusUltra");
+  }
+
+  @Override
+  public ItemStack getTabIconItem(){
+  	return new ItemStack(DIAMOND_COMPRESSED_PICKAXE);
+  }
 }

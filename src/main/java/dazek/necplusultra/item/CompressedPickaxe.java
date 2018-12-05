@@ -23,15 +23,15 @@ import net.minecraft.item.ItemPickaxe;
 
 /**
  *
- * @author zekromaster
+ * @author Dazek Team
  */
 public class CompressedPickaxe extends ItemPickaxe {
-    
-    public CompressedPickaxe(ToolMaterial t, String unlocalizedName){
-        super(t);
-        this.setUnlocalizedName(NecPlusUltra.MODID + "." + unlocalizedName);
-        this.setMaxDamage(t.getMaxUses() * NecPlusConfig.pickStrength);
-        this.setCreativeTab(NecPlusUltra.necTab);
-        this.setRegistryName(unlocalizedName);
-    }
+
+  public CompressedPickaxe(ToolMaterial t, String unlocalizedName){
+  	super(t);
+  	this.setUnlocalizedName(NecPlusUltra.MODID + "." + unlocalizedName);
+  	this.setMaxDamage(t.getMaxUses() * NecPlusConfig.pickStrength);
+  	this.setCreativeTab(NecPlusUltra.necTab);
+  	this.setRegistryName(unlocalizedName);
+  }
 }

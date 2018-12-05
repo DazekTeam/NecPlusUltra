@@ -39,47 +39,47 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 /**
  *
- * @author zekromaster
+ * @author Dazek Team
  */
 
 @Mod.EventBusSubscriber
 public class CommonProxy {
-    public static Configuration config;
-    
-    public void preInit(FMLPreInitializationEvent e){
-         File directory = e.getModConfigurationDirectory();
-        config = new Configuration(new File(directory.getPath(), "necplusultra.cfg"));
-        NecPlusConfig.readConfig();
+  public static Configuration config;
 
-    }
-    
-    public void init(FMLInitializationEvent e){
-        
-    }
-    
-    public void postInit(FMLPostInitializationEvent e){
-        if (config.hasChanged()) {
-            config.save();
-        }
-    }
-    
-    @SubscribeEvent
-    public static void registerBlocks(RegistryEvent.Register<Block> event) {
-        for(Block b : NecBlock.getBlockList()){
-            event.getRegistry().register(b);
-        }
-    }
-    
-    @SubscribeEvent
-    public static void registerItems(RegistryEvent.Register<Item> event) {
-        // Regular Items
-        for(Item i : NecItem.getItemList()){
-            event.getRegistry().register(i);
-        }
+  public void preInit(FMLPreInitializationEvent e){
+  	File directory = e.getModConfigurationDirectory();
+  	config = new Configuration(new File(directory.getPath(), "necplusultra.cfg"));
+  	NecPlusConfig.readConfig();
 
-        // Item Blocks
-        for(ItemBlock i : NecBlock.getItemBlockList()){
-            event.getRegistry().register(i);
-        }
-    }
+  }
+
+  public void init(FMLInitializationEvent e){
+
+  }
+
+  public void postInit(FMLPostInitializationEvent e){
+  	if (config.hasChanged()) {
+  		config.save();
+  	}
+  }
+
+  @SubscribeEvent
+  public static void registerBlocks(RegistryEvent.Register<Block> event) {
+  	for(Block b : NecBlock.getBlockList()) {
+  		event.getRegistry().register(b);
+  	}
+  }
+
+  @SubscribeEvent
+  public static void registerItems(RegistryEvent.Register<Item> event) {
+  	// Regular Items
+  	for(Item i : NecItem.getItemList()) {
+  		event.getRegistry().register(i);
+  	}
+
+  	// Item Blocks
+  	for(ItemBlock i : NecBlock.getItemBlockList()) {
+  		event.getRegistry().register(i);
+  	}
+  }
 }

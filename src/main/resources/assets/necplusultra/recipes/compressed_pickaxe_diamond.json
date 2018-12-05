@@ -1,17 +1,17 @@
 {
-    "type": "forge:ore_shaped",
-    "pattern": [
-        "###",
-        "###",
-        "###"
-    ],
-   "key": {
-     "#": {
-            "item": "minecraft:diamond_pickaxe"
-     }   
-   },
-    "result": {
-        "item": "necplusultra:compressed_pickaxe_diamond",
-        "count": 1
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:diamond_pickaxe"
     }
+  },
+  "result": {
+    "item": "necplusultra:compressed_pickaxe_diamond",
+    "count": 1
+  }
 }

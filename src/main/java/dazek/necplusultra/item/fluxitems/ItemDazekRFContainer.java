@@ -29,39 +29,39 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
  *
- * @author Daem
- * 
+ * @author Dazek Team
+ *
  * Used to create items that use rf as durability
  */
-public abstract class ItemDazekRFContainer extends ItemEnergyContainer{
-    public ItemDazekRFContainer(int capacity, String unlocalizedName){
-        super(capacity);
-        
-        this.setUnlocalizedName(NecPlusUltra.MODID + "." + unlocalizedName);
-        this.setCreativeTab(NecPlusUltra.necTab);
-        this.setRegistryName(unlocalizedName);
-        this.setMaxStackSize(1);
-    }
-    
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn){
-        tooltip.add(getEnergyStored(stack) + "/" + getMaxEnergyStored(stack) + " RF");
-    }
-    
-    @Override
-    public double getDurabilityForDisplay(ItemStack stack){
-        // I dunno why this needs a 1 -, but it works
-        return 1 - (double)getEnergyStored(stack) / (double)getMaxEnergyStored(stack);
-    }
-    
-    @Override
-    public int getRGBDurabilityForDisplay(ItemStack stack){
-        return 0xFF0000;
-    }
-    
-    @Override
-    public boolean showDurabilityBar(ItemStack stack){
-        return true;
-    }
+public abstract class ItemDazekRFContainer extends ItemEnergyContainer {
+  public ItemDazekRFContainer(int capacity, String unlocalizedName){
+  	super(capacity);
+
+  	this.setUnlocalizedName(NecPlusUltra.MODID + "." + unlocalizedName);
+  	this.setCreativeTab(NecPlusUltra.necTab);
+  	this.setRegistryName(unlocalizedName);
+  	this.setMaxStackSize(1);
+  }
+
+  @Override
+  @SideOnly(Side.CLIENT)
+  public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn){
+  	tooltip.add(getEnergyStored(stack) + "/" + getMaxEnergyStored(stack) + " RF");
+  }
+
+  @Override
+  public double getDurabilityForDisplay(ItemStack stack){
+  	// I dunno why this needs a 1 -, but it works
+  	return 1 - (double)getEnergyStored(stack) / (double)getMaxEnergyStored(stack);
+  }
+
+  @Override
+  public int getRGBDurabilityForDisplay(ItemStack stack){
+  	return 0xFF0000;
+  }
+
+  @Override
+  public boolean showDurabilityBar(ItemStack stack){
+  	return true;
+  }
 }

@@ -31,31 +31,31 @@ import org.apache.logging.log4j.Logger;
 @Mod(modid = NecPlusUltra.MODID, name = NecPlusUltra.NAME, version = NecPlusUltra.VERSION, useMetadata=true)
 public class NecPlusUltra
 {
-    public static final String MODID = "necplusultra";
-    public static final String NAME = "Nec Plus Ultra";
-    public static final String VERSION = "v1#19";
-    
+  public static final String MODID = "necplusultra";
+  public static final String NAME = "Nec Plus Ultra";
+  public static final String VERSION = "v1#19";
 
-    public static Logger logger;
-    
-    public static CreativeTabs necTab = new CreativeTab();
-    
-    @SidedProxy (clientSide = "dazek.necplusultra.proxy.ClientProxy", serverSide = "dazek.necplusultra.proxy.CommonProxy")
-    public static CommonProxy proxy;
-    
-    @EventHandler
-    public void preInit(FMLPreInitializationEvent event){
-        logger = event.getModLog();
-        proxy.preInit(event);
-    }
 
-    @EventHandler
-    public void init(FMLInitializationEvent e){
-        proxy.init(e);        
-    }
-    
-    @EventHandler
-    public void postInit(FMLPostInitializationEvent e){
-        proxy.postInit(e);
-    }
+  public static Logger logger;
+
+  public static CreativeTabs necTab = new CreativeTab();
+
+  @SidedProxy (clientSide = "dazek.necplusultra.proxy.ClientProxy", serverSide = "dazek.necplusultra.proxy.CommonProxy")
+  public static CommonProxy proxy;
+
+  @EventHandler
+  public void preInit(FMLPreInitializationEvent event){
+  	logger = event.getModLog();
+  	proxy.preInit(event);
+  }
+
+  @EventHandler
+  public void init(FMLInitializationEvent e){
+  	proxy.init(e);
+  }
+
+  @EventHandler
+  public void postInit(FMLPostInitializationEvent e){
+  	proxy.postInit(e);
+  }
 }

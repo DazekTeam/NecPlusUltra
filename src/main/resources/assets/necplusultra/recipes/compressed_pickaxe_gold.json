@@ -1,17 +1,17 @@
 {
-    "type": "forge:ore_shaped",
-    "pattern": [
-        "###",
-        "###",
-        "###"
-    ],
-   "key": {
-     "#": {
-            "item": "minecraft:golden_pickaxe"
-     }   
-   },
-    "result": {
-        "item": "necplusultra:compressed_pickaxe_gold",
-        "count": 1
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:golden_pickaxe"
     }
+  },
+  "result": {
+    "item": "necplusultra:compressed_pickaxe_gold",
+    "count": 1
+  }
 }

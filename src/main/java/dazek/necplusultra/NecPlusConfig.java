@@ -22,49 +22,49 @@ import org.apache.logging.log4j.Level;
 
 /**
  *
- * @author zekromaster
+ * @author Dazek Team
  */
 public class NecPlusConfig {
-    private static final String CATEGORY_GENERAL = "general";
-    private static final String CATEGORY_PICKAXES = "pickaxes";
-    private static final String CATEGORY_RF_ITEMS = "rf_items";
-    
-    // Properties
-    public static int pickStrength = 10; 
-    
-    public static int rfBatteryMaxRF = 10000;
-    public static int energyDrinkMaxRF = 1000;
-    public static int energyDrinkMaxHunger = 12;
-    
-    public static void readConfig() {
-        Configuration cfg = CommonProxy.config;
-        try {
-            cfg.load();
-            initGeneralConfig(cfg);
-            initPickaxeConfig(cfg);
-            initRFItems(cfg);
-        } catch (Exception e1) {
-            NecPlusUltra.logger.log(Level.ERROR, "Problem loading config file!", e1);
-        } finally {
-            if (cfg.hasChanged()) {
-                cfg.save();
-            }
-        }
-    }
-    
-    private static void initGeneralConfig(Configuration cfg) {
-        cfg.addCustomCategoryComment(CATEGORY_GENERAL, "General configuration");
-    }
-    
-    private static void initPickaxeConfig(Configuration cfg) {
-        cfg.addCustomCategoryComment(CATEGORY_PICKAXES, "Pickaxes configuration -- For futureproofing");
-        pickStrength = cfg.getInt("pickStrength", CATEGORY_PICKAXES, pickStrength, 2, 99, "A compressed pickaxe's durability is it's base pick's durability * pickStrength");
-    }
-    
-    private static void initRFItems(Configuration cfg){
-        cfg.addCustomCategoryComment(CATEGORY_RF_ITEMS, "RF Items Configuration");
-        rfBatteryMaxRF = cfg.getInt("rfBatteryMaxRF", CATEGORY_RF_ITEMS, rfBatteryMaxRF, 1, Integer.MAX_VALUE, "The maximum amount of rf that can be stored in a rf battery");        
-        energyDrinkMaxRF = cfg.getInt("energyDrinkMaxRF", CATEGORY_RF_ITEMS, energyDrinkMaxRF, 1, Integer.MAX_VALUE, "The maximum amount of rf that can be stored in an energy drink");        
-        energyDrinkMaxHunger = cfg.getInt("energyDrinkMaxRF", CATEGORY_RF_ITEMS, energyDrinkMaxHunger, 2, 20, "The maximum amount of hunger tha can be restored by an energy drink. Actual hunger restored is this multiplied by the ratio of RF stored to max RF.");        
-    }
+  private static final String CATEGORY_GENERAL = "general";
+  private static final String CATEGORY_PICKAXES = "pickaxes";
+  private static final String CATEGORY_RF_ITEMS = "rf_items";
+
+  // Properties
+  public static int pickStrength = 10;
+
+  public static int rfBatteryMaxRF = 10000;
+  public static int energyDrinkMaxRF = 1000;
+  public static int energyDrinkMaxHunger = 12;
+
+  public static void readConfig() {
+  	Configuration cfg = CommonProxy.config;
+  	try {
+  		cfg.load();
+  		initGeneralConfig(cfg);
+  		initPickaxeConfig(cfg);
+  		initRFItems(cfg);
+  	} catch (Exception e1) {
+  		NecPlusUltra.logger.log(Level.ERROR, "Problem loading config file!", e1);
+  	} finally {
+  		if (cfg.hasChanged()) {
+  			cfg.save();
+  		}
+  	}
+  }
+
+  private static void initGeneralConfig(Configuration cfg) {
+  	cfg.addCustomCategoryComment(CATEGORY_GENERAL, "General configuration");
+  }
+
+  private static void initPickaxeConfig(Configuration cfg) {
+  	cfg.addCustomCategoryComment(CATEGORY_PICKAXES, "Pickaxes configuration -- For futureproofing");
+  	pickStrength = cfg.getInt("pickStrength", CATEGORY_PICKAXES, pickStrength, 2, 99, "A compressed pickaxe's durability is it's base pick's durability * pickStrength");
+  }
+
+  private static void initRFItems(Configuration cfg){
+  	cfg.addCustomCategoryComment(CATEGORY_RF_ITEMS, "RF Items Configuration");
+  	rfBatteryMaxRF = cfg.getInt("rfBatteryMaxRF", CATEGORY_RF_ITEMS, rfBatteryMaxRF, 1, Integer.MAX_VALUE, "The maximum amount of rf that can be stored in a rf battery");
+  	energyDrinkMaxRF = cfg.getInt("energyDrinkMaxRF", CATEGORY_RF_ITEMS, energyDrinkMaxRF, 1, Integer.MAX_VALUE, "The maximum amount of rf that can be stored in an energy drink");
+  	energyDrinkMaxHunger = cfg.getInt("energyDrinkMaxRF", CATEGORY_RF_ITEMS, energyDrinkMaxHunger, 2, 20, "The maximum amount of hunger tha can be restored by an energy drink. Actual hunger restored is this multiplied by the ratio of RF stored to max RF.");
+  }
 }

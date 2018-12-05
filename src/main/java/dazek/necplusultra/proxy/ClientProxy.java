@@ -32,52 +32,52 @@ import net.minecraftforge.fml.relauncher.Side;
 
 /**
  *
- * @author zekromaster
+ * @author Dazek Team
  */
 
 @Mod.EventBusSubscriber(Side.CLIENT)
 public class ClientProxy extends CommonProxy {
-    
-    @Override
-    public void preInit(FMLPreInitializationEvent e) {
-        super.preInit(e);
-    }
 
-    @Override
-    public void init(FMLInitializationEvent e) {
-        super.init(e);
-    }
-    
-     @Override
-    public void postInit(FMLPostInitializationEvent e) {
-        super.postInit(e);
-    }
-    
-    private static void registerItemModel(Item i)
-    {
-            ModelResourceLocation location = new ModelResourceLocation(i.getRegistryName(),"inventory");
-            ModelLoader.setCustomModelResourceLocation(i, 0, location );
-            System.out.println("Registered model for " + i.getRegistryName() + ". It is in " + location);
-    }
+  @Override
+  public void preInit(FMLPreInitializationEvent e) {
+  	super.preInit(e);
+  }
 
-    private static void registerBlockModel(Block b){
-        Item item = Item.getItemFromBlock(b);
-        ModelResourceLocation location = new ModelResourceLocation(item.getRegistryName(), "normal");
-        ModelLoader.setCustomModelResourceLocation(item, 0, location);
+  @Override
+  public void init(FMLInitializationEvent e) {
+  	super.init(e);
+  }
 
-        System.out.println("Registered model for " + item.getRegistryName() + ". It is in " + location);
-    }
+  @Override
+  public void postInit(FMLPostInitializationEvent e) {
+  	super.postInit(e);
+  }
 
-    @SubscribeEvent
-    public static void registerModels(ModelRegistryEvent event) {
-        // Item Models
-        NecItem.getItemList().forEach(i -> {
-            registerItemModel((Item)i);
-        });
+  private static void registerItemModel(Item i)
+  {
+  	ModelResourceLocation location = new ModelResourceLocation(i.getRegistryName(),"inventory");
+  	ModelLoader.setCustomModelResourceLocation(i, 0, location );
+  	System.out.println("Registered model for " + i.getRegistryName() + ". It is in " + location);
+  }
 
-        // Block Models
-        NecBlock.getBlockList().forEach(b -> {
-            registerBlockModel((Block)b);
-        });
-    }
+  private static void registerBlockModel(Block b){
+  	Item item = Item.getItemFromBlock(b);
+  	ModelResourceLocation location = new ModelResourceLocation(item.getRegistryName(), "normal");
+  	ModelLoader.setCustomModelResourceLocation(item, 0, location);
+
+  	System.out.println("Registered model for " + item.getRegistryName() + ". It is in " + location);
+  }
+
+  @SubscribeEvent
+  public static void registerModels(ModelRegistryEvent event) {
+  	// Item Models
+  	NecItem.getItemList().forEach(i->{
+  			registerItemModel((Item)i);
+  		});
+
+  	// Block Models
+  	NecBlock.getBlockList().forEach(b->{
+  			registerBlockModel((Block)b);
+  		});
+  }
 }

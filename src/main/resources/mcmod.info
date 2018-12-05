@@ -1,5 +1,4 @@
-[
-{
+[{
   "modid": "necplusultra",
   "name": "Nec Plus Ultra",
   "description": "To infinity and beyond. Through random features!",
@@ -14,5 +13,4 @@
   "requiredMods": ["forge", "redstoneflux"],
   "dependencies": ["forge", "redstoneflux"],
   "useDependencyInformation": "true"
-}
-]
+}]
