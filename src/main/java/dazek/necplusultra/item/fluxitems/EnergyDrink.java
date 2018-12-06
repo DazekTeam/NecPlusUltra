@@ -31,13 +31,9 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 
-/**
- *
- * @author Dazek Team
- */
-public class ItemEnergyDrink extends ItemDazekRFContainer {
+public class EnergyDrink extends ItemDazekRFContainer {
 
-  public ItemEnergyDrink(String unlocalizedName) {
+  public EnergyDrink(String unlocalizedName) {
   	super(NecPlusConfig.energyDrinkMaxRF, unlocalizedName);
   }
 

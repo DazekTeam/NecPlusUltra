@@ -16,8 +16,8 @@
  */
 package dazek.necplusultra.item.fluxitems;
 
+import dazek.necplusultra.item.IItemDazek;
 import cofh.redstoneflux.impl.ItemEnergyContainer;
-import dazek.necplusultra.NecPlusUltra;
 
 import java.util.List;
 import javax.annotation.Nullable;
@@ -28,18 +28,12 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
- *
- * @author Dazek Team
- *
  * Used to create items that use rf as durability
  */
-public abstract class ItemDazekRFContainer extends ItemEnergyContainer {
+public abstract class ItemDazekRFContainer extends ItemEnergyContainer implements IItemDazek {
   public ItemDazekRFContainer(int capacity, String unlocalizedName){
   	super(capacity);
-
-  	this.setUnlocalizedName(NecPlusUltra.MODID + "." + unlocalizedName);
-  	this.setCreativeTab(NecPlusUltra.necTab);
-  	this.setRegistryName(unlocalizedName);
+    this.init(unlocalizedName);
   	this.setMaxStackSize(1);
   }
 

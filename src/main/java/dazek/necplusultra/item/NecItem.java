@@ -16,69 +16,50 @@
  */
 package dazek.necplusultra.item;
 
-import dazek.necplusultra.item.fluxitems.ItemEnergyDrink;
-import dazek.necplusultra.item.fluxitems.ItemRFBattery;
+import java.util.List;
+import java.util.HashMap;
+import dazek.necplusultra.item.fluxitems.RFBattery;
+import dazek.necplusultra.item.toolitems.CompressedPickaxe;
+import dazek.necplusultra.item.fluxitems.EnergyDrink;
 import java.util.ArrayList;
 
 import net.minecraft.item.Item;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import static net.minecraft.item.Item.ToolMaterial.*;
 
-/**
- *
- * @author Dazek Team
- */
 public class NecItem {
-  @GameRegistry.ObjectHolder("necplusultra:compressed_pickaxe_wood")
-  public static CompressedPickaxe WOODEN_COMPRESSED_PICKAXE;
 
-  @GameRegistry.ObjectHolder("necplusultra:compressed_pickaxe_stone")
-  public static CompressedPickaxe STONE_COMPRESSED_PICKAXE;
-
-  @GameRegistry.ObjectHolder("necplusultra:compressed_pickaxe_iron")
-  public static CompressedPickaxe IRON_COMPRESSED_PICKAXE;
-
-  @GameRegistry.ObjectHolder("necplusultra:compressed_pickaxe_gold")
-  public static CompressedPickaxe GOLD_COMPRESSED_PICKAXE;
-
-  @GameRegistry.ObjectHolder("necplusultra:compressed_pickaxe_diamond")
-  public static CompressedPickaxe DIAMOND_COMPRESSED_PICKAXE;
-
-  @GameRegistry.ObjectHolder("necplusultra:rf_battery")
-  public static ItemRFBattery RF_BATTERY;
-
-  @GameRegistry.ObjectHolder("necplusultra:energy_drink")
-  public static ItemEnergyDrink ENERGY_DRINK;
-
-  private static ArrayList<Item> itemList;
+  private static HashMap<String, Item> itemMap;
 
   // Add new items here
   public static void createItems(){
-  	if (itemList != null)
+  	if (itemMap != null)
   		return;
 
-  	itemList = new ArrayList<>();
+  	itemMap = new HashMap<>();
 
   	// Compressed Pickaxes
-  	itemList.add(new CompressedPickaxe(WOOD, "compressed_pickaxe_wood"));
-  	itemList.add(new CompressedPickaxe(STONE, "compressed_pickaxe_stone"));
-  	itemList.add(new CompressedPickaxe(IRON, "compressed_pickaxe_iron"));
-  	itemList.add(new CompressedPickaxe(GOLD, "compressed_pickaxe_gold"));
-  	itemList.add(new CompressedPickaxe(DIAMOND, "compressed_pickaxe_diamond"));
+  	itemMap.put("compressed_pickaxe_wood", new CompressedPickaxe(WOOD, "compressed_pickaxe_wood"));
+  	itemMap.put("compressed_pickaxe_stone", new CompressedPickaxe(STONE, "compressed_pickaxe_stone"));
+  	itemMap.put("compressed_pickaxe_iron", new CompressedPickaxe(IRON, "compressed_pickaxe_iron"));
+  	itemMap.put("compressed_pickaxe_gold", new CompressedPickaxe(GOLD, "compressed_pickaxe_gold"));
+  	itemMap.put("compressed_pickaxe_diamond", new CompressedPickaxe(DIAMOND, "compressed_pickaxe_diamond"));
 
   	// RF Items
-  	itemList.add(new ItemRFBattery("rf_battery"));
-  	itemList.add(new ItemEnergyDrink("energy_drink"));
-
+  	itemMap.put("rf_battery", new RFBattery("rf_battery"));
+  	itemMap.put("energy_drink", new EnergyDrink("energy_drink"));
   }
 
   // Relisting them here for ease of iterating
-  public static ArrayList<Item> getItemList(){
-  	if (itemList == null) {
+  public static HashMap<String, Item> getItemMap(){
+  	if (itemMap == null) {
   		createItems();
   	}
   	//Returning
-  	return itemList;
+  	return itemMap;
+  }
+
+  public static List<Item> getItemList(){
+    return new ArrayList<Item>(getItemMap().values());
   }
 }

@@ -18,15 +18,10 @@ package dazek.necplusultra.proxy;
 
 import dazek.necplusultra.NecPlusConfig;
 import dazek.necplusultra.block.NecBlock;
-import dazek.necplusultra.block.TestBlock;
-import dazek.necplusultra.item.CompressedPickaxe;
 import dazek.necplusultra.item.NecItem;
-import dazek.necplusultra.item.fluxitems.ItemEnergyDrink;
-import dazek.necplusultra.item.fluxitems.ItemRFBattery;
 import java.io.File;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
-import static net.minecraft.item.Item.ToolMaterial.*;
 
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.common.config.Configuration;
@@ -36,11 +31,6 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-
-/**
- *
- * @author Dazek Team
- */
 
 @Mod.EventBusSubscriber
 public class CommonProxy {

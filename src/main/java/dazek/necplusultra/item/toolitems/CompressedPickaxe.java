@@ -1,9 +1,3 @@
-package dazek.necplusultra;
-
-import static dazek.necplusultra.item.NecItem.DIAMOND_COMPRESSED_PICKAXE;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.ItemStack;
-
 /*
  * Copyright (C) 2018 Dazek Team
  *
@@ -20,18 +14,13 @@ import net.minecraft.item.ItemStack;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+package dazek.necplusultra.item.toolitems;
 
-/**
- *
- * @author Dazek Team
- */
-public class CreativeTab extends CreativeTabs {
-  public CreativeTab(){
-  	super("NecPlusUltra");
-  }
+import dazek.necplusultra.NecPlusConfig;
 
-  @Override
-  public ItemStack getTabIconItem(){
-  	return new ItemStack(DIAMOND_COMPRESSED_PICKAXE);
+
+public class CompressedPickaxe extends ItemDazekPick {
+  public CompressedPickaxe(ToolMaterial t, String unlocalizedName){
+  	super(t, unlocalizedName, t.getMaxUses() * NecPlusConfig.pickStrength);
   }
 }

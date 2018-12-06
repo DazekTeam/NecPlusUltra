@@ -1,5 +1,11 @@
+package dazek.necplusultra.creativetab;
+
+import dazek.necplusultra.item.NecItem;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemStack;
+
 /*
- * Copyright (C) 2018 Dazek
+ * Copyright (C) 2018 Dazek Team
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,18 +20,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package dazek.necplusultra.item.fluxitems;
 
-import dazek.necplusultra.NecPlusConfig;
-
-/**
- *
- * @author Dazek Team
- */
-public class ItemRFBattery extends ItemDazekRFContainer {
-
-  public ItemRFBattery(String unlocalizedName) {
-  	super(NecPlusConfig.rfBatteryMaxRF, unlocalizedName);
+public class NecTab extends CreativeTabs {
+  public NecTab(){
+  	super("NecPlusUltra");
   }
 
+  @Override
+  public ItemStack getTabIconItem(){
+  	return new ItemStack(NecItem.getItemMap().get("diamond_compressed_pickaxe"));
+  }
 }

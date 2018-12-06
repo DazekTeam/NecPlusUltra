@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 Dazek Team
+ * Copyright (C) 2018 Dazek
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,24 +14,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package dazek.necplusultra.item;
+package dazek.necplusultra.item.fluxitems;
 
 import dazek.necplusultra.NecPlusConfig;
-import dazek.necplusultra.NecPlusUltra;
-import net.minecraft.item.ItemPickaxe;
 
+public class RFBattery extends ItemDazekRFContainer {
 
-/**
- *
- * @author Dazek Team
- */
-public class CompressedPickaxe extends ItemPickaxe {
-
-  public CompressedPickaxe(ToolMaterial t, String unlocalizedName){
-  	super(t);
-  	this.setUnlocalizedName(NecPlusUltra.MODID + "." + unlocalizedName);
-  	this.setMaxDamage(t.getMaxUses() * NecPlusConfig.pickStrength);
-  	this.setCreativeTab(NecPlusUltra.necTab);
-  	this.setRegistryName(unlocalizedName);
+  public RFBattery(String unlocalizedName) {
+  	super(NecPlusConfig.rfBatteryMaxRF, unlocalizedName);
   }
+
 }

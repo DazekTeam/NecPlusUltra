@@ -1,7 +1,7 @@
 {
   "forge_marker": 1,
   "defaults": {
-    "model": "necplusultra:test_block"
+    "model": "necplusultra:hyper_furnace"
   },
   "variants": {
     "normal": [{}],

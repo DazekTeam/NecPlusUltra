@@ -1,0 +1,9 @@
+{
+  "parent": "block/orientable",
+  "forge_marker": 1,
+  "textures": {
+    "front": "necplusultra:blocks/hyper_furnace_front",
+    "top": "necplusultra:blocks/hyper_furnace_top",
+    "side": "necplusultra:blocks/hyper_furnace_side"
+  }
+}

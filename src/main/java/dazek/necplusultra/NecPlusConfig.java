@@ -20,10 +20,6 @@ import dazek.necplusultra.proxy.CommonProxy;
 import net.minecraftforge.common.config.Configuration;
 import org.apache.logging.log4j.Level;
 
-/**
- *
- * @author Dazek Team
- */
 public class NecPlusConfig {
   private static final String CATEGORY_GENERAL = "general";
   private static final String CATEGORY_PICKAXES = "pickaxes";
@@ -57,7 +53,7 @@ public class NecPlusConfig {
   }
 
   private static void initPickaxeConfig(Configuration cfg) {
-  	cfg.addCustomCategoryComment(CATEGORY_PICKAXES, "Pickaxes configuration -- For futureproofing");
+  	cfg.addCustomCategoryComment(CATEGORY_PICKAXES, "Pickaxes configuration");
   	pickStrength = cfg.getInt("pickStrength", CATEGORY_PICKAXES, pickStrength, 2, 99, "A compressed pickaxe's durability is it's base pick's durability * pickStrength");
   }
 

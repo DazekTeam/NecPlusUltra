@@ -17,6 +17,7 @@
 
 package dazek.necplusultra;
 
+import dazek.necplusultra.creativetab.NecTab;
 import dazek.necplusultra.proxy.CommonProxy;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.Mod;
@@ -38,7 +39,7 @@ public class NecPlusUltra
 
   public static Logger logger;
 
-  public static CreativeTabs necTab = new CreativeTab();
+  public static CreativeTabs necTab = new NecTab();
 
   @SidedProxy (clientSide = "dazek.necplusultra.proxy.ClientProxy", serverSide = "dazek.necplusultra.proxy.CommonProxy")
   public static CommonProxy proxy;

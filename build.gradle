@@ -41,7 +41,7 @@ repositories {
 }
 
 dependencies {
-        deobfCompile "cofh:RedstoneFlux:1.12-2.0.1.2:universal"
+        deobfCompile "cofh:RedstoneFlux:1.12-2.1.0.6:universal"
 }
 
 processResources {
